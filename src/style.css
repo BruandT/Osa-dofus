@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat&family=Raleway&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Color pour les themes */
+@layer base {
+	:root {
+		--color-text-base: 255, 255, 255; /* couleur blanche*/
+		--color-text-light: 248, 219, 288; /* couleur jaune */
+		--color-text-color: 40, 129, 185; /* couleur bleu clair */
+		--color-fill: 31, 92, 143; /* couleur bleu */
+		--color-bg-base: 255, 255, 255; /* couleur blanche */
+    --color-bg-base-hover: 248, 219, 288; /* couleur jaune */
+		--color-bg-shadow: 24, 24, 24; /* couleur gris foncé*/		
+		--color-bg-color: 40, 129, 185; /* couleur bleu clair */
+    --color-bg-color-hover: 248, 219, 288; /* couleur jaune */
+	}
+}
+
