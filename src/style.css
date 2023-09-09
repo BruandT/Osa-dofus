@@ -13,14 +13,82 @@
 @layer base {
 	:root {
 		--color-text-base: 255, 255, 255; /* couleur blanche*/
-		--color-text-light: 248, 219, 288; /* couleur jaune */
+		--color-text-light: 248, 219, 88; /* couleur jaune */
 		--color-text-color: 40, 129, 185; /* couleur bleu clair */
+    --color-text-shadow: 24, 24, 24; /* couleur gris foncé*/
 		--color-fill: 31, 92, 143; /* couleur bleu */
 		--color-bg-base: 255, 255, 255; /* couleur blanche */
     --color-bg-base-hover: 248, 219, 288; /* couleur jaune */
 		--color-bg-shadow: 24, 24, 24; /* couleur gris foncé*/		
 		--color-bg-color: 40, 129, 185; /* couleur bleu clair */
     --color-bg-color-hover: 248, 219, 288; /* couleur jaune */
+    --color-light: 248, 219, 288; /* couleur jaune */
 	}
+}
+
+
+.bg-monster{
+  height: 65vh;
+}
+.bg-main{
+  height: 80vh;
+  background: #181818 url('../public/assets/bg/keyart.png') center no-repeat;
+  background-size: cover;
+}
+.bg-blue-left{
+  height: 80%;
+  width: 420px;
+  background: url('../public/assets/bg/bg-block-reminder.png') center no-repeat;
+  background-size: 100%;
+}
+.p-scalex{
+  transform: scaleX(-1);
+}
+.bg-blue-right{
+  height: 80%;
+  width: 420px;
+  background: url('../public/assets/bg/bg-block-reminder.png') center no-repeat;
+  background-size: 100%;
+  transform: scaleX(-1);
+}
+.bg-white-right{
+  height: 100%;
+  width: 620px;
+  background: url('../public/assets/bg/bg-text.png') center no-repeat;
+  background-size: 100%;
+}
+.bg-white-left{
+  height: 100%;
+  width: 620px;
+  background: url('../public/assets/bg/bg-text.png') center no-repeat;
+  background-size: 100%;
+  transform: scaleX(-1);
+}
+#monster::before{
+  content: "";
+  width: 80px;
+  height: 80px;
+  background: url('../public/assets/icons/monster.png') center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -25%;
+}
+#stuff::before{
+  content: "";
+  width: 80px;
+  height: 80px;
+  background: url('../public/assets/icons/equipment.png') center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -25%;
+}
+#build::before{
+  content: "";
+  width: 80px;
+  height: 80px;
+  background: url('../public/assets/icons/deck.png') center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -25%;
 }
 
