@@ -3,7 +3,7 @@ import React from "react";
 function Footer(props) {
   return (
     <>
-      <footer>
+      <footer className="h-24 bg-skin-bg-shadow flex flex-col">
         <p>
           Dofus est un MMORPG édité par Ankama. " Osa'loot " est un site
           non-officiel sans aucun lien avec Ankama. Toutes les illustrations
