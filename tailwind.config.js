@@ -20,6 +20,9 @@ module.exports = {
       'roboto': ['Roboto'],
     },
     extend: {
+      colors: {
+        'blue': withOpacity('--color-blue'),
+      },
       textColor: {
         skin: {
           base: withOpacity('--color-text-base'),
