@@ -11,7 +11,7 @@ function CardMonster(data) {
             className=' w-20 h-20 ml-3'
           />
           <div className='flex flex-col mt-2'>
-            <h3 className="w-40 pr-1">{data.name}</h3>
+            <h3 className='w-40 pr-1'>{data.name}</h3>
             <p>
               Niv. {data.lvlMin} à {data.lvlMax}
             </p>
