@@ -3,7 +3,7 @@ import datas from "../datas/monster.json";
 import CardMonster from "../components/CardMonster";
 
 function Monster(props) {
-  const itemsPerPage = 12;
+  const monstersPerPage = 12;
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState(""); // State pour stocker le terme de recherche
 
@@ -11,15 +11,17 @@ function Monster(props) {
   const sortedDatas = datas.slice().sort((a, b) => a.levelMin - b.levelMin);
 
   // Filtrez les monstres en fonction du terme de recherche
-  const filteredMonsters = sortedDatas.filter((data) =>
-    data.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredMonsters = sortedDatas.filter(
+    (data) =>
+      data.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      Object.keys(data.drops).length > 0
   );
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
+  const startIndex = (currentPage - 1) * monstersPerPage;
+  const endIndex = startIndex + monstersPerPage;
   const monstersToDisplay = filteredMonsters.slice(startIndex, endIndex);
 
-  const totalPages = Math.ceil(filteredMonsters.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredMonsters.length / monstersPerPage);
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
@@ -36,9 +38,9 @@ function Monster(props) {
     <>
       <main className='bg-main flex justify-center w-screen bg-skin-bg-shadow'>
         <div className='bg-monster w-10/12 mt-10 p-3 flex flex-col items-center bg-skin-bg-shadow rounded'>
-          <div className="w-full flex justify-center relative">
-            <input 
-            className="search absolute left-10 rounded pl-2"
+          <div className='w-full flex justify-center relative'>
+            <input
+              className='search absolute left-10 rounded pl-2'
               type='text'
               placeholder='Recherche monstre'
               value={searchTerm}
@@ -51,9 +53,11 @@ function Monster(props) {
             {monstersToDisplay.map((data) => (
               <CardMonster
                 key={`${data.id}-${data.name}`}
+                id={data.id}
                 name={data.name}
                 lvlMin={data.levelMin}
                 lvlMax={data.levelMax}
+                item={data.drops}
               />
             ))}
           </div>
